@@ -15,7 +15,7 @@ export default function App() {
 
     let screen = <StartGameScreen onPickNumber={pickedNumberHandler} />
     if (userNumber) {
-        screen = <GameScreen />
+        screen = <GameScreen chosenNumber={userNumber} />
     }
     return (
         <>
@@ -29,7 +29,7 @@ export default function App() {
                     source={require('./assets/images/background.png')}
                     resizeMode="cover"
                     style={styles.rootScreen}
-                    imageStyle={styles.backgroundImageStayle}
+                    imageStyle={styles.backgroundImageStyle}
                 >
                     <SafeAreaView style={styles.rootScreen}>
                         {screen}
@@ -44,7 +44,7 @@ const styles = StyleSheet.create({
     rootScreen: {
         flex: 1,
     },
-    backgroundImageStayle: {
+    backgroundImageStyle: {
         opacity: 0.15,
     },
 })
